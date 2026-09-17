@@ -1,0 +1,37 @@
+[package]
+name = "erlang_actors_rust"
+version = "0.1.0"
+edition = "2021"
+description = "A small library that brings Erlang/OTP-style actor semantics (supervision trees, bounded mailboxes, monitors, deadlock-free ask/tell) to Rust using only tokio."
+license = "MIT"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "time"] }
+console-subscriber = "0.4"
+uuid = { version = "1", features = ["v4"] }
+thiserror = "1"
+
+[[example]]
+name = "worker_pool"
+path = "examples/worker_pool.rs"
+
+[[example]]
+name = "deadlock_bad"
+path = "examples/deadlock_bad.rs"
+
+[[example]]
+name = "deadlock_good"
+path = "examples/deadlock_good.rs"
+
+[[example]]
+name = "monitors"
+path = "examples/monitors.rs"
+
+[profile.release]
+debug = true

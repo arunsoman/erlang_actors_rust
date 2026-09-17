@@ -1,0 +1,16 @@
+# Optional cargo configuration for this crate.
+#
+# These flags make `tokio-console` work out of the box — no need to remember
+# to set RUSTFLAGS="--cfg tokio_unstable" manually. CI does NOT use this file
+# (it sets RUSTFLAGS explicitly), so it doesn't affect builds there.
+#
+# If you don't want tokio-console, just delete this file.
+
+[build]
+rustflags = ["--cfg", "tokio_unstable"]
+
+[alias]
+# Quick-run aliases so you don't have to remember the example names.
+examples = ["run", "--example", "worker_pool"]
+deadlock = ["run", "--example", "deadlock_good"]
+watch = ["run", "--example", "monitors"]

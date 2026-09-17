@@ -1,0 +1,43 @@
+# Rust build artifacts
+/target/
+**/target/
+Cargo.lock.bak
+
+# Editor / IDE
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs / runtime
+*.log
+*.pid
+*.lock
+!Cargo.lock
+
+# Coverage / profiling
+*.profraw
+*.profdata
+tarpaulin-report.html
+cobertura.xml
+lcov.info
+
+# tokio-console captured dumps
+console-*.dump
